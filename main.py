@@ -1,7 +1,5 @@
 from ExtratorArgumentosUrl import ExtratorArgumentosUrl
 
-# Vídeo 01 - None, empty e o if do Python
-
 string = None
 print(string is None)
 
@@ -44,8 +42,6 @@ argumento = ExtratorArgumentosUrl.urlEhValida(url)
 
 print(argumento)
 
-# Vídeo 03 - Construindo mais métodos
-
 """
 Método na classe ExtratorArgumentos, feito no vídeo 03:
 
@@ -67,8 +63,6 @@ argumentoUrl = ExtratorArgumentosUrl(url)
 
 moedaOrigem, moedaDestino = argumentoUrl.extraiArgumentos()
 print(moedaOrigem, moedaDestino)
-
-# Vídeo 04 - O método len
 
 url = "https://www.bytebank.com.br/cambio?moedaorigem=real&moedadestino=dolar"
 
