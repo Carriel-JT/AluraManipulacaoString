@@ -1,71 +1,49 @@
 from ExtratorArgumentosUrl import ExtratorArgumentosUrl
 
-string = None
-print(string is None)
+string = 'bytebank'
+stringNova = string.replace('bank', 'rodrigo')
+print(stringNova)
 
-string = ''
-print(string is None)
+string = 'bytebankbytebyte'
+stringNova = string.replace('byte', 'rodrigo')
+print(stringNova)
 
-if string:
-    print('Tem algo Aqui')
-else:
-    print('Não tem nada Aqui!!')
+string = 'bytebankbytebyte'
+stringNova = string.replace('byte', 'rodrigo', 1)
+print(stringNova)
 
-string = 'Jullian'
+url = "https://bytebank.com/cambio?moedaorigem=moedadestino&moedadestino=dolar"
 
-if string:
-    print('Tem algo Aqui')
-else:
-    print('Não tem nada Aqui!!')
+argumentosUrl = ExtratorArgumentosUrl(url)
+moedaOrigem, moedaDestino = argumentosUrl.extraiArgumentos()
+print(moedaDestino, moedaOrigem)
 
-string = 12
+banco1 = 'bytebank'
+banco2 = 'Bytebank'
+print(banco1 == banco2)
 
-if string:
-    print('Tem algo Aqui')
-else:
-    print('Não tem nada Aqui!!')
+banco2 = 'Bytebank'.upper()
+print(banco2)
 
-string = 0
+banco2 = 'Bytebank'.lower()
+print(banco2)
 
-if string:
-    print('Tem algo Aqui')
-else:
-    print('Não tem nada Aqui!!')
+url = "https://bytebank.com/cambio?moedaorigem=moedadestino&moedadestino=dolar&valor=1500"
 
-url = "https://www.bytebank.com.br/cambio?moedaorigem=real&moedadestino=dolar&valor=700"
-argumento = ExtratorArgumentosUrl.urlEhValida(url) 
+argumentosUrl = ExtratorArgumentosUrl(url)
+moedaOrigem, moedaDestino = argumentosUrl.extraiArgumentos()
+valor = argumentosUrl.extraiValor()
+print(moedaDestino, moedaOrigem, valor)
 
-print(argumento)
+urlByteBank = "https://bytebank.com"
+url1 = "https://buscasites.com/busca?q=https://bytebank.com"
+url2 = "https://bitebank.com.br"
+url3 = "https://bytebank.com/cambio/teste/teste"
 
-url = None
-argumento = ExtratorArgumentosUrl.urlEhValida(url) 
+print(url1.find(urlByteBank))
+print(url2.find(urlByteBank))
+print(url3.find(urlByteBank))
 
-print(argumento)
-
-"""
-Método na classe ExtratorArgumentos, feito no vídeo 03:
-
-        def extraiArgumentos(self):
-        
-        indiceInicialMoedaDestino = self.url.find('=', 15) + 1
-
-        indiceInicialMoedaOrigem = self.url.find('=') + 1
-        indiceFinalMoedaOrigem = self.url.find('&')
-
-        moedaOrigem = self.url[indiceInicialMoedaOrigem:indiceFinalMoedaOrigem]
-        moedaDestino = self.url[indiceInicialMoedaDestino:]
-
-        return moedaOrigem, moedaDestino
-"""
-url = "moedaorigem=real&moedadestino=dolar"
-
-argumentoUrl = ExtratorArgumentosUrl(url)
-
-moedaOrigem, moedaDestino = argumentoUrl.extraiArgumentos()
-print(moedaOrigem, moedaDestino)
-
-url = "https://www.bytebank.com.br/cambio?moedaorigem=real&moedadestino=dolar"
-
-index = url.find('moedadestino') + len('moedadestino') + 1
-substring = url[index:]
-print(substring)
+print(url1.startswith(urlByteBank))
+print(url2.startswith(urlByteBank))
+print(url3.startswith(urlByteBank))
