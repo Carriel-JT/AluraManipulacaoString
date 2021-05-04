@@ -1,5 +1,5 @@
 from ExtratorArgumentosUrl import ExtratorArgumentosUrl
-'''
+
 string = 'bytebank'
 stringNova = string.replace('bank', 'rodrigo')
 print(stringNova)
@@ -11,15 +11,7 @@ print(stringNova)
 string = 'bytebankbytebyte'
 stringNova = string.replace('byte', 'rodrigo', 1)
 print(stringNova)
-'''
 
-url = "https://bytebank.com/cambio?moedaorigem=moedadestino&moedadestino=dolar"
-
-argumentosUrl = ExtratorArgumentosUrl(url)
-moedaOrigem, moedaDestino = argumentosUrl.extraiArgumentos()
-print(moedaDestino, moedaOrigem)
-
-'''
 banco1 = 'bytebank'
 banco2 = 'Bytebank'
 print(banco1 == banco2)
@@ -28,8 +20,7 @@ print(banco2)
 
 banco2 = 'Bytebank'.lower()
 print(banco2)
-'''
-'''
+
 url = "https://bytebank.com/cambio?moedaorigem=moedadestino&moedadestino=dolar&valor=1500"
 
 argumentosUrl = ExtratorArgumentosUrl(url)
@@ -49,4 +40,10 @@ print(url3.find(urlByteBank))
 print(url1.startswith(urlByteBank))
 print(url2.startswith(urlByteBank))
 print(url3.startswith(urlByteBank))
+
+url = "https://bytebank.com/cambio?moedaorigem=moedadestino&moedadestino=dolar"
+
+argumentosUrl = ExtratorArgumentosUrl(url)
+moedaOrigem, moedaDestino = argumentosUrl.extraiArgumentos()
+print(moedaDestino, moedaOrigem)
 '''
