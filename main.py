@@ -24,6 +24,7 @@ print(banco2)
 url = "https://bytebank.com/cambio?moedaorigem=moedadestino&moedadestino=dolar&valor=1500"
 
 argumentosUrl = ExtratorArgumentosUrl(url)
+argumentosUrl2 = ExtratorArgumentosUrl(url)
 moedaOrigem, moedaDestino = argumentosUrl.extraiArgumentos()
 valor = argumentosUrl.extraiValor()
 print(moedaDestino, moedaOrigem, valor)
@@ -46,4 +47,5 @@ url = "https://bytebank.com/cambio?moedaorigem=moedadestino&moedadestino=dolar"
 argumentosUrl = ExtratorArgumentosUrl(url)
 moedaOrigem, moedaDestino = argumentosUrl.extraiArgumentos()
 print(moedaDestino, moedaOrigem)
-'''
+
+print(argumentosUrl == argumentosUrl2)
